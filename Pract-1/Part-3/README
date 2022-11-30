@@ -1,0 +1,4 @@
+Parte 3: Multiplicación de matrices por N threads. 
+Implementa la multiplicación de dos matrices de tamaño NxN utilizando N threads de manera que cada thread calcula una fila del producto.
+
+OJO!!!! No nos iba bien

@@ -1,0 +1,8 @@
+Parte 2: Provocar una condición de carrera. 
+Escribir un programa concurrente en el que míltiples threads compartan y modifiquen una variable de tipo int sin utilizar ningún mecanismo de sincronización de 
+forma que el resultado final de la variable una vezque los threads terminan pueda no ser el valor esperado. Tendremos dos tipos de procesos, decrementadores e 
+incrementadores que realizan N decrementos e incrementos, respectivamente, sobre una misma variable (n) de tipo int inicializada a 0 almacena en un objeto de la 
+clase Entero al que tienen acceso todos los threads. El programa concurrente pondrá en marcha M procesos de cada tipo y una vez que todos los threads hayan terminado 
+imprimirá el valor de la variable compartida. El valor final de la variable debería ser 0 ya que se habr´an producido M × N decrementos (n–) y M × N incrementos (n++), 
+sin embargo, si dos operaciones se ejecutan de forma entrelazada el resultado puede no ser el esperado (por ejemplo, dos incrementos podrían terminar por no 
+incrementar la variable en 2).
