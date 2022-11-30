@@ -1,0 +1,19 @@
+public class createThreads extends Thread {
+	private int T;
+	
+	public createThreads (String str, int T) {
+		super(str);
+		this.T = T;
+	}
+	
+    //imprimir su identificador, dormir durante T ms e imprimir su identificador
+	public void run() {
+		System.out.println("Dormimos al proceso " + getName() + " durante " + T + "ms");
+		try {
+			sleep((long) T);
+		}
+		catch (InterruptedException e ) {}
+		System.out.println("Despertamos al proceso " + getName());
+	}
+	
+}
