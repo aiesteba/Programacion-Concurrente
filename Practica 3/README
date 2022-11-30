@@ -1,0 +1,30 @@
+Productor-consumidor con semáforos. 
+Existen procesos de dos tipos diferentes:
+  Productores, su hilo de ejecución consiste, repetidamente, en crear un producto y hacerlo llegar a uno de los consumidores. 
+  Consumidores: su hilo de ejecuci´on consiste, repetidamente, en recoger productos producidos por los productores y consumirlos. La comunicación entre productores 
+  y consumidores se realizará través de un “almacén” compartido por todos los procesos. 
+
+La interfaz de Almacen es:
+  public interface Almacen {
+  /**
+  * Almacena (como ultimo) un producto en el almac´en. Si no hay
+  * hueco el proceso que ejecute el m´etodo bloquear´a hasta que lo
+  * haya.
+  */
+  public void almacenar(Producto producto);
+  /**
+  * Extrae el primer producto disponible. Si no hay productos el
+  * proceso que ejecute el m´etodo bloquear´a hasta que se almacene un
+  * dato.
+  */
+  public Producto extraer();
+  }
+  
+El tamaño del almacén es uno, es decir, si un proceso quiere almacenar debe esperar hasta que no haya producto y si un proceso quiere extraer espera hasta 
+que haya un producto. Para valorar si el problema está bien resuelto, el objetivo es asegurar que todos los productos producidos acaban por ser consumidos,
+que no se consume un producto dos veces y que no se consume ningún producto no válido (null, por ejemplo).
+Recomendación: jugar con los valores de n´umero de productores y n´umero de consumidores y observar con atenci´on las trazas del programa.
+
+Extensión a almacén con N productos. 
+En esta apartado, el almacén a implementar tiene una capacidad de hasta N productos, lo que permite a los productores seguir trabajando aunque los consumidores 
+se vuelvan, momentáneamente, lentos.
